@@ -1,0 +1,98 @@
+┌─────────────────────────────────────────────────────────────────┐
+│          WESTACK ENGINEERING WEBSITE - LAUNCH CHECKLIST         │
+│                    Check off as you complete                    │
+└─────────────────────────────────────────────────────────────────┘
+
+📸 IMAGES TO ADD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Company logo (img/logo.png)
+ [ ] Carousel image 1 (img/carousel-1.jpg)
+ [ ] Carousel image 2 (img/carousel-2.jpg)
+ [ ] Carousel image 3 (img/carousel-3.jpg)
+ [ ] Civil engineering service image (img/service-1.jpg)
+ [ ] Mechanical/pipeline service image (img/service-2.jpg)
+ [ ] Gas/power/electrical service image (img/service-3.jpg)
+ [ ] About page image (img/about.jpg)
+ [ ] Project portfolio photos (img/portfolio-*.jpg)
+ [ ] Favicon icon (img/favicon.ico)
+
+🔍 TESTING CHECKLIST:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Open index.html in browser
+ [ ] Test all navigation menu links
+ [ ] Check all pages load correctly
+ [ ] Verify all images display
+ [ ] Test on mobile (resize browser window)
+ [ ] Check contact form displays properly
+ [ ] Review all content for accuracy
+ [ ] Test all service detail pages
+ [ ] Check projects/portfolio gallery
+ [ ] Verify phone/email/address on all pages
+
+📝 CONTENT REVIEW:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Company name correct everywhere
+ [ ] Contact information accurate
+ [ ] Services descriptions reviewed
+ [ ] About page content approved
+ [ ] Vision and mission statements correct
+ [ ] No references to old company (Mansatac)
+
+🚀 DEPLOYMENT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Choose hosting method (Netlify/Hosting/GitHub)
+ [ ] Create hosting account
+ [ ] Upload website files
+ [ ] Configure custom domain (optional)
+ [ ] Set up SSL/HTTPS (automatic with most hosts)
+ [ ] Test live website
+ [ ] Configure contact form backend
+
+🌐 POST-LAUNCH:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Submit to Google Search Console
+ [ ] Create Google My Business listing
+ [ ] Add website to business cards
+ [ ] Share on social media
+ [ ] Update email signatures with website link
+ [ ] Monitor contact form submissions
+ [ ] Set up website analytics (Google Analytics)
+
+💼 OPTIONAL ENHANCEMENTS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Add client testimonials
+ [ ] Create team member profiles
+ [ ] Add project case studies with details
+ [ ] Set up blog section
+ [ ] Add certifications/accreditations
+ [ ] Create downloadable company brochure
+ [ ] Add WhatsApp chat integration
+ [ ] Set up Google Maps on contact page
+
+📧 PROFESSIONAL EMAIL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ [ ] Consider upgrading to custom domain email
+     (info@westackengineering.com instead of Gmail)
+ [ ] Configure email forwarding
+ [ ] Set up professional email signature
+
+🎯 PRIORITY ORDER:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Add company logo and carousel images    [HIGH]
+2. Replace service and project photos      [HIGH]
+3. Test website locally                    [HIGH]
+4. Deploy to hosting                       [HIGH]
+5. Set up contact form                     [MEDIUM]
+6. Configure custom domain                 [MEDIUM]
+7. Add remaining content/images            [LOW]
+
+┌─────────────────────────────────────────────────────────────────┐
+│  ESTIMATED TIME TO LAUNCH: 2-4 hours (with images ready)       │
+└─────────────────────────────────────────────────────────────────┘
+
+✅ READY TO START?
+1. Read QUICK-START.txt (already open)
+2. Follow IMAGE-UPLOAD-GUIDE.html (in your browser)
+3. Use DEPLOYMENT-GUIDE.html (in your browser) when ready to go live
+
+Good luck! Your professional website is just a few steps away! 🚀

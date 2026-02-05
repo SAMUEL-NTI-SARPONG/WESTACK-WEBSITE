@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Deployment Guide - Westack Engineering</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; 
+            background: #f4f4f4; 
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #032709; 
+            margin-bottom: 20px; 
+            border-bottom: 3px solid #032709; 
+            padding-bottom: 10px; 
+        }
+        h2 { 
+            color: #032709; 
+            margin: 30px 0 15px; 
+            padding: 10px; 
+            background: #f0f0f0; 
+            border-left: 4px solid #032709; 
+        }
+        .method { 
+            border: 2px solid #ddd; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            background: #fafafa; 
+        }
+        .method h3 { 
+            color: #032709; 
+            margin-bottom: 15px; 
+        }
+        .pros { 
+            background: #d4edda; 
+            border-left: 4px solid #28a745; 
+            padding: 10px; 
+            margin: 10px 0; 
+        }
+        .cons { 
+            background: #f8d7da; 
+            border-left: 4px solid #dc3545; 
+            padding: 10px; 
+            margin: 10px 0; 
+        }
+        .steps { 
+            background: #e7f3ff; 
+            border-left: 4px solid #2196F3; 
+            padding: 15px; 
+            margin: 10px 0; 
+        }
+        code { 
+            background: #032709; 
+            color: white; 
+            padding: 2px 6px; 
+            border-radius: 3px; 
+            font-family: 'Courier New', monospace; 
+        }
+        .note { 
+            background: #fff3cd; 
+            border-left: 4px solid #ffc107; 
+            padding: 15px; 
+            margin: 20px 0; 
+        }
+        ul, ol { margin: 10px 0 10px 30px; }
+        li { margin: 8px 0; }
+        .badge { 
+            display: inline-block; 
+            padding: 4px 8px; 
+            border-radius: 3px; 
+            font-size: 12px; 
+            font-weight: bold; 
+            margin-left: 10px; 
+        }
+        .free { background: #28a745; color: white; }
+        .paid { background: #ffc107; color: #000; }
+        .easy { background: #2196F3; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Website Deployment Guide</h1>
+        <h2>Westack Engineering Ltd. - How to Put Your Website Online</h2>
+
+        <div class="note">
+            <strong>📍 You Are Here:</strong> Your website files are ready in the <code>westack-website</code> folder. 
+            Now you need to choose how to host it so people can access it on the internet.
+        </div>
+
+        <h2>🌟 Best Deployment Options</h2>
+
+        <div class="method">
+            <h3>1. Netlify (Recommended) <span class="badge free">FREE</span> <span class="badge easy">EASIEST</span></h3>
+            
+            <div class="pros">
+                ✅ <strong>Pros:</strong>
+                <ul>
+                    <li>100% Free for basic use</li>
+                    <li>Extremely easy - just drag and drop</li>
+                    <li>Automatic HTTPS (secure website)</li>
+                    <li>Custom domain support</li>
+                    <li>Fast global CDN</li>
+                    <li>No technical knowledge needed</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <strong>📝 Steps to Deploy:</strong>
+                <ol>
+                    <li>Go to <a href="https://www.netlify.com" target="_blank">www.netlify.com</a></li>
+                    <li>Click "Sign up" (use email or GitHub)</li>
+                    <li>After logging in, click "Add new site" → "Deploy manually"</li>
+                    <li>Drag the entire <code>westack-website</code> folder into the box</li>
+                    <li>Wait 30 seconds - Your site is LIVE!</li>
+                    <li>Netlify gives you a URL like: <code>your-site-name.netlify.app</code></li>
+                    <li>Optional: Add your custom domain (westackengineering.com)</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <strong>💡 Pro Tip:</strong> You can update your website anytime by dragging the folder again!
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>2. GitHub Pages <span class="badge free">FREE</span> <span class="badge easy">EASY</span></h3>
+            
+            <div class="pros">
+                ✅ <strong>Pros:</strong>
+                <ul>
+                    <li>100% Free forever</li>
+                    <li>Integrated with Git (version control)</li>
+                    <li>Good for developers</li>
+                    <li>Automatic HTTPS</li>
+                    <li>Custom domain support</li>
+                </ul>
+            </div>
+
+            <div class="cons">
+                ❌ <strong>Cons:</strong>
+                <ul>
+                    <li>Requires basic Git knowledge</li>
+                    <li>Slightly more technical</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <strong>📝 Steps to Deploy:</strong>
+                <ol>
+                    <li>Create account at <a href="https://github.com" target="_blank">github.com</a></li>
+                    <li>Install <a href="https://desktop.github.com" target="_blank">GitHub Desktop</a></li>
+                    <li>Create new repository called "westack-website"</li>
+                    <li>Add all your website files to the repository</li>
+                    <li>Commit and push to GitHub</li>
+                    <li>Go to repository Settings → Pages</li>
+                    <li>Select branch "main" and folder "/" (root)</li>
+                    <li>Click Save - site goes live at <code>yourusername.github.io/westack-website</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>3. Traditional Web Hosting (cPanel) <span class="badge paid">PAID</span></h3>
+            
+            <div class="pros">
+                ✅ <strong>Pros:</strong>
+                <ul>
+                    <li>Full control over domain and email</li>
+                    <li>Can host multiple websites</li>
+                    <li>Professional email addresses (info@westack.com)</li>
+                    <li>Good for business websites</li>
+                </ul>
+            </div>
+
+            <div class="cons">
+                ❌ <strong>Cons:</strong>
+                <ul>
+                    <li>Costs $3-10/month</li>
+                    <li>Requires domain purchase (~$10-15/year)</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <strong>📝 Steps to Deploy:</strong>
+                <ol>
+                    <li>Buy hosting from: Namecheap, Bluehost, SiteGround, or local Ghana providers</li>
+                    <li>Register domain: westackengineering.com or westack.com.gh</li>
+                    <li>Log into cPanel (hosting control panel)</li>
+                    <li>Open "File Manager"</li>
+                    <li>Navigate to <code>public_html</code> folder</li>
+                    <li>Upload all files from <code>westack-website</code> folder</li>
+                    <li>Make sure <code>index.html</code> is in the root</li>
+                    <li>Visit your domain - Website is live!</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <strong>🇬🇭 Ghana Hosting Providers:</strong>
+                <ul>
+                    <li>HubTel - hubtel.com</li>
+                    <li>PrimeFuse - primefuse.com</li>
+                    <li>DreamHost Ghana</li>
+                    <li>Register.com.gh for .com.gh domains</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="method">
+            <h3>4. Vercel <span class="badge free">FREE</span> <span class="badge easy">EASY</span></h3>
+            
+            <div class="pros">
+                ✅ <strong>Pros:</strong>
+                <ul>
+                    <li>Free tier available</li>
+                    <li>Very fast deployment</li>
+                    <li>Great performance</li>
+                    <li>Easy custom domain setup</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <strong>📝 Steps to Deploy:</strong>
+                <ol>
+                    <li>Go to <a href="https://vercel.com" target="_blank">vercel.com</a></li>
+                    <li>Sign up with email or GitHub</li>
+                    <li>Click "Add New" → "Project"</li>
+                    <li>Import from GitHub or upload folder</li>
+                    <li>Click "Deploy" - Done!</li>
+                    <li>Your site is at <code>your-project.vercel.app</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🎯 Which One Should You Choose?</h2>
+
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background: #032709; color: white;">
+                    <th style="padding: 12px; text-align: left;">Your Need</th>
+                    <th style="padding: 12px; text-align: left;">Best Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #f9f9f9;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">Quick & Free, No Technical Skills</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Netlify</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Professional Business Website + Email</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>cPanel Hosting</strong></td>
+                </tr>
+                <tr style="background: #f9f9f9;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">You Know Git/GitHub</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>GitHub Pages</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Maximum Speed & Performance</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Vercel</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔐 After Deployment Checklist</h2>
+        <ul>
+            <li>✅ Website loads correctly on desktop</li>
+            <li>✅ Website looks good on mobile</li>
+            <li>✅ All navigation links work</li>
+            <li>✅ Images display properly</li>
+            <li>✅ Contact form works (may need backend setup)</li>
+            <li>✅ HTTPS (secure padlock) is enabled</li>
+            <li>✅ Domain name is connected (if using custom domain)</li>
+        </ul>
+
+        <h2>🌐 Custom Domain Setup</h2>
+        <div class="note">
+            <strong>Want westackengineering.com instead of netlify.app?</strong>
+            <ol>
+                <li>Buy domain from Namecheap, GoDaddy, or Register.com.gh</li>
+                <li>In your hosting platform (Netlify/Vercel), go to Domain Settings</li>
+                <li>Add your custom domain</li>
+                <li>Update DNS records at your domain registrar (they provide instructions)</li>
+                <li>Wait 24-48 hours for DNS to propagate</li>
+                <li>Your site is now at your custom domain!</li>
+            </ol>
+        </div>
+
+        <h2>📧 Setting Up Contact Form</h2>
+        <div class="steps">
+            <strong>Your contact form needs a backend to send emails. Options:</strong>
+            <ol>
+                <li><strong>Formspree</strong> (Easiest):
+                    <ul>
+                        <li>Sign up at formspree.io (free plan available)</li>
+                        <li>Get your form endpoint</li>
+                        <li>Update form action in contact.html</li>
+                    </ul>
+                </li>
+                <li><strong>Netlify Forms</strong> (if using Netlify):
+                    <ul>
+                        <li>Just add <code>netlify</code> attribute to your form</li>
+                        <li>Forms automatically work!</li>
+                    </ul>
+                </li>
+                <li><strong>Email.js</strong>:
+                    <ul>
+                        <li>Free service for sending emails from contact forms</li>
+                        <li>Easy JavaScript integration</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h2>🎉 You're All Set!</h2>
+        <div class="pros">
+            <strong>Your Westack Engineering Ltd. website is ready to go live!</strong>
+            <ol>
+                <li>Add your images (see IMAGE-UPLOAD-GUIDE.html)</li>
+                <li>Choose a deployment method above</li>
+                <li>Upload/deploy your website</li>
+                <li>Share your new website URL with clients!</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <strong>📞 Need Help?</strong> If you get stuck, most hosting platforms have excellent documentation and 24/7 support chat.
+        </div>
+    </div>
+</body>
+</html>

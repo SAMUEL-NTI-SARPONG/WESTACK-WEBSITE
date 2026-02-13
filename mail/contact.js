@@ -61,9 +61,14 @@ $(function () {
         encodeURIComponent("Website Inquiry: " + subject) +
         "&body=" +
         encodeURIComponent(
-          "Name: " + name + "\n" +
-          "Email: " + email + "\n\n" +
-          "Message:\n" + message
+          "Name: " +
+            name +
+            "\n" +
+            "Email: " +
+            email +
+            "\n\n" +
+            "Message:\n" +
+            message,
         );
 
       // Show success message

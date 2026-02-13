@@ -11,78 +11,84 @@ $(function () {
 
       $this = $("#sendMessageButton");
       $this.prop("disabled", true);
+      $this.html("Sending...");
 
-      // Create mailto link to company
-      var mailtoLinkToCompany =
+      // =====================================================
+      // OPTION 1: FORMSPREE (Recommended - Free, no backend)
+      // =====================================================
+      // 1. Go to https://formspree.io and create a free account
+      // 2. Create a new form and get your form ID (e.g., "xpzgdkny")
+      // 3. Replace YOUR_FORM_ID below with your actual Formspree ID
+      // 4. Uncomment the Formspree block and comment out the mailto block
+      //
+      // $.ajax({
+      //   url: "https://formspree.io/f/YOUR_FORM_ID",
+      //   method: "POST",
+      //   data: {
+      //     name: name,
+      //     _replyto: email,
+      //     _subject: "Website Inquiry: " + subject,
+      //     message: message,
+      //   },
+      //   dataType: "json",
+      //   success: function () {
+      //     $("#success").html("<div class='alert alert-success'>");
+      //     $("#success > .alert-success")
+      //       .html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>")
+      //       .append("<strong>Message sent successfully! </strong>We will get back to you shortly.");
+      //     $("#success > .alert-success").append("</div>");
+      //     $("#contactForm").trigger("reset");
+      //     $this.html("Send Message");
+      //     $this.prop("disabled", false);
+      //   },
+      //   error: function () {
+      //     $("#success").html("<div class='alert alert-danger'>");
+      //     $("#success > .alert-danger")
+      //       .html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>")
+      //       .append("<strong>Sorry, it seems our mail server is not responding. Please try again later or email us directly at westackghana@gmail.com</strong>");
+      //     $("#success > .alert-danger").append("</div>");
+      //     $this.html("Send Message");
+      //     $this.prop("disabled", false);
+      //   },
+      // });
+
+      // =====================================================
+      // OPTION 2: MAILTO FALLBACK (Currently Active)
+      // =====================================================
+      var mailtoLink =
         "mailto:westackghana@gmail.com" +
         "?subject=" +
-        encodeURIComponent("Contact Form: " + subject) +
+        encodeURIComponent("Website Inquiry: " + subject) +
         "&body=" +
         encodeURIComponent(
-          "Name: " +
-            name +
-            "\n" +
-            "Email: " +
-            email +
-            "\n\n" +
-            "Message:\n" +
-            message,
-        );
-
-      // Create mailto link for auto-reply to sender
-      var mailtoLinkToSender =
-        "mailto:" +
-        email +
-        "?subject=" +
-        encodeURIComponent(
-          "Thank you for contacting Westack Engineering Ltd.",
-        ) +
-        "&body=" +
-        encodeURIComponent(
-          "Dear " +
-            name +
-            ",\n\n" +
-            "Thank you for reaching out to us. We have received your message regarding: " +
-            subject +
-            "\n\n" +
-            "Our team will review your inquiry and get back to you as soon as possible.\n\n" +
-            "Best regards,\n" +
-            "Westack Engineering Ltd.\n" +
-            "Email: westackghana@gmail.com\n" +
-            "Phone: +233 208 907 208",
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n\n" +
+          "Message:\n" + message
         );
 
       // Show success message
       $("#success").html("<div class='alert alert-success'>");
       $("#success > .alert-success")
         .html(
-          "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
+          "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>",
         )
-        .append("</button>");
+        .append(
+          "<strong>Thank you!</strong> Your email client will open. Please click Send in your email app to deliver the message.",
+        );
       $("#success > .alert-success").append(
-        "<strong>Thank you for your message!</strong>",
-      );
-      $("#success > .alert-success").append(
-        "<p>Your email client will open to send your message to us. Please send both emails (to us and the confirmation to yourself).</p>",
-      );
-      $("#success > .alert-success").append(
-        "<p>If your email client doesn't open automatically, please email us at: westackghana@gmail.com</p>",
+        "<br><small>If your email client doesn't open, email us directly at: <a href='mailto:westackghana@gmail.com'>westackghana@gmail.com</a></small>",
       );
       $("#success > .alert-success").append("</div>");
 
-      // Open email client for message to company
-      window.location.href = mailtoLinkToCompany;
+      // Open email client
+      window.location.href = mailtoLink;
 
-      // After a short delay, open email client for auto-reply to sender
-      setTimeout(function () {
-        window.open(mailtoLinkToSender, "_blank");
-      }, 1000);
-
-      // Reset form after a short delay
+      // Reset form
       setTimeout(function () {
         $("#contactForm").trigger("reset");
+        $this.html("Send Message");
         $this.prop("disabled", false);
-      }, 3000);
+      }, 2000);
     },
     filter: function () {
       return $(this).is(":visible");

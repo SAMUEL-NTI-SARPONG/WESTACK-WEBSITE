@@ -3,7 +3,7 @@
   <!-- Mirrored from www.mansatac.net/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Feb 2026 01:46:31 GMT -->
   <head>
     <meta charset="utf-8" />
-    <title>Contact | Westack Engineering Ltd.</title>
+    <title>Contact | West ACK Engineering Ltd.</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta
@@ -39,7 +39,7 @@
                 <a href="index.html">
                   <img src="img/logo.png" alt="Westack Logo" />
                   <h1>
-                    <span class="logo-westack">WESTACK</span>
+                    <span class="logo-westack">WEST ACK</span>
                     <span class="logo-subtitle">ENGINEERING LTD.</span>
                   </h1>
                 </a>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="top-bar-text">
                       <h3>Call Us</h3>
-                      <p>+233 208 907 208</p>
+                      <p>+233 262 766 068</p>
                     </div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
                   <i class="flaticon-address"></i>
                   <div class="contact-text">
                     <h2>Location</h2>
-                    <p>P.O. Box TD 686, Takoradi, Ghana</p>
+                    <p>P.O. Box MC 858, Takoradi, Ghana</p>
                   </div>
                 </div>
                 <div class="contact-item">
@@ -159,18 +159,23 @@
               <div class="contact-form">
                 <div id="success"></div>
                 <form
-                  name="sentMessage"
-                  id="contactForm"
-                  novalidate="novalidate"
+                  action="https://formsubmit.co/westackghana@gmail.com"
+                  method="POST"
                 >
+                  <!-- FormSubmit Configuration (hidden fields) -->
+                  <input type="hidden" name="_subject" value="New Website Inquiry - West ACK Engineering">
+                  <input type="hidden" name="_captcha" value="true">
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_next" value="https://westackengineering.com/contact.html">
+                  <input type="text" name="_honey" style="display:none">
+                  
                   <div class="control-group">
                     <input
                       type="text"
                       class="form-control"
-                      id="name"
+                      name="name"
                       placeholder="Your Name"
-                      required="required"
-                      data-validation-required-message="Please enter your name"
+                      required
                     />
                     <p class="help-block text-danger"></p>
                   </div>
@@ -178,10 +183,9 @@
                     <input
                       type="email"
                       class="form-control"
-                      id="email"
+                      name="email"
                       placeholder="Your Email"
-                      required="required"
-                      data-validation-required-message="Please enter your email"
+                      required
                     />
                     <p class="help-block text-danger"></p>
                   </div>
@@ -189,25 +193,23 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="subject"
+                      name="subject"
                       placeholder="Subject"
-                      required="required"
-                      data-validation-required-message="Please enter a subject"
+                      required
                     />
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="control-group">
                     <textarea
                       class="form-control"
-                      id="message"
+                      name="message"
                       placeholder="Message"
-                      required="required"
-                      data-validation-required-message="Please enter your message"
+                      required
                     ></textarea>
                     <p class="help-block text-danger"></p>
                   </div>
                   <div>
-                    <button class="btn" type="submit" id="sendMessageButton">
+                    <button class="btn" type="submit">
                       Send Message
                     </button>
                   </div>
@@ -229,8 +231,9 @@
         </div>
       </div>
       <div>
+        <!-- Main Office: Parody Ave, Takoradi (GhanaPost GPS: WS-444-2596) -->
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.424393660287!2d-1.6621667000000002!3d5.0347222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7dd663c31ebe7d4b!2zNcKwMDInMDUuMCJOIDHCsDM5JzQzLjgiVw!5e0!3m2!1sen!2sgh!4v1672304880291!5m2!1sen!2sgh"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5!2d-1.7531!3d4.9016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNTQnMDUuOCJOIDHCsDQ1JzExLjIiVw!5e0!3m2!1sen!2sgh!4v1700000000000!5m2!1sen!2sgh"
           width="100%"
           height="350"
           style="border: 0"
@@ -238,6 +241,18 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
+        <!-- TO ADD A SECOND LOCATION: Copy the iframe block below and paste it right after this one -->
+        <!-- 
+        <iframe
+          src="PASTE_YOUR_SECOND_GOOGLE_MAPS_EMBED_URL_HERE"
+          width="100%"
+          height="350"
+          style="border: 0; margin-top: 5px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        -->
       </div>
       <div
         class="footer wow fadeIn"
@@ -250,17 +265,18 @@
               <div class="footer-contact">
                 <h2>Contact Us</h2>
                 <p>
-                  <i class="fa fa-map-marker-alt"></i>P.O. Box TD 686,
-                  Takoradi, Ghana
+                  <i class="fa fa-map-marker-alt"></i>P.O. Box MC 858, Takoradi,
+                  Ghana
                 </p>
-                <p><i class="fa fa-phone-alt"></i>+233 208 907 208</p>
+                <p><i class="fa fa-phone-alt"></i>+233 262 766 068</p>
                 <p><i class="fa fa-envelope"></i>westackghana@gmail.com</p>
                 <div class="footer-social">
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <!-- Replace # below with your real social media URLs -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" title="Twitter / X"><i class="fab fa-twitter"></i></a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -296,10 +312,10 @@
         <div class="container copyright">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2025 Westack Engineering Ltd. All Rights Reserved</p>
+              <p>&copy; 2025 West ACK Engineering Ltd. All Rights Reserved</p>
             </div>
             <div class="col-md-6">
-              <p>Designed By Westack Engineering Ltd.</p>
+              <p>Designed By West ACK Engineering Ltd.</p>
             </div>
           </div>
         </div>

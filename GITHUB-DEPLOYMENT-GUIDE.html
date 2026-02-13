@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Deployment Guide — West ACK Engineering</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+        .header { background: linear-gradient(135deg, #06335e 0%, #0a4a8a 100%); color: white; padding: 50px 30px; text-align: center; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.85; font-size: 1.1rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
+        .section { background: white; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+        h2 { color: #06335e; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 3px solid #ff6700; padding-bottom: 10px; display: inline-block; }
+        h3 { color: #06335e; margin: 25px 0 12px 0; font-size: 1.15rem; }
+        .prereq { background: #fff3e6; border-left: 4px solid #ff6700; padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 15px 0; }
+        .prereq strong { color: #ff6700; }
+        .step { display: flex; gap: 15px; margin: 20px 0; align-items: flex-start; }
+        .step-num { min-width: 40px; height: 40px; background: #06335e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+        .step-content { flex: 1; }
+        .step-content h4 { color: #06335e; margin-bottom: 5px; }
+        code { background: #1e1e1e; color: #d4d4d4; padding: 2px 8px; border-radius: 4px; font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.9rem; }
+        .cmd-block { background: #1e1e1e; color: #d4d4d4; padding: 18px 22px; border-radius: 8px; margin: 12px 0; overflow-x: auto; font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.88rem; line-height: 1.8; position: relative; }
+        .cmd-block .comment { color: #6a9955; }
+        .cmd-block .highlight { color: #ff6700; font-weight: bold; }
+        .tip { background: #e8f4fd; border-left: 4px solid #06335e; padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 15px 0; }
+        .tip strong { color: #06335e; }
+        .warning { background: #fff0f0; border-left: 4px solid #e74c3c; padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 15px 0; }
+        .warning strong { color: #e74c3c; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .badge.onetime { background: #06335e; color: white; }
+        .badge.repeat { background: #ff6700; color: white; }
+        ol, ul { padding-left: 25px; margin: 10px 0; }
+        li { margin: 5px 0; }
+        a { color: #ff6700; }
+        .footer { background: #06335e; color: rgba(255,255,255,0.7); text-align: center; padding: 25px; margin-top: 40px; }
+        .toc { background: #f8f9fa; border-radius: 8px; padding: 20px 30px; margin: 20px 0; }
+        .toc a { display: block; padding: 6px 0; color: #06335e; text-decoration: none; }
+        .toc a:hover { color: #ff6700; }
+        img.screenshot { max-width: 100%; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>GitHub Deployment Guide</h1>
+    <p>Push your West ACK website to GitHub and deploy with GitHub Pages</p>
+</div>
+
+<div class="container">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="section">
+        <h2>Contents</h2>
+        <div class="toc">
+            <a href="#prerequisites">1. Prerequisites (One-Time Setup)</a>
+            <a href="#first-push">2. First-Time Push to GitHub</a>
+            <a href="#github-pages">3. Deploy with GitHub Pages (Free Hosting)</a>
+            <a href="#updates">4. Pushing Future Updates</a>
+            <a href="#custom-domain">5. Custom Domain (Optional)</a>
+            <a href="#troubleshooting">6. Troubleshooting</a>
+        </div>
+    </div>
+
+    <!-- PREREQUISITES -->
+    <div class="section" id="prerequisites">
+        <h2>1. Prerequisites <span class="badge onetime">ONE-TIME</span></h2>
+        
+        <div class="prereq">
+            <strong>You need these installed before starting:</strong>
+            <ul>
+                <li><strong>Git</strong> — Download from <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a> and install (keep all defaults during installation)</li>
+                <li><strong>GitHub Account</strong> — Create one free at <a href="https://github.com/join" target="_blank">github.com/join</a></li>
+            </ul>
+        </div>
+
+        <h3>Verify Git is installed</h3>
+        <p>Open <strong>Command Prompt</strong> or <strong>VS Code Terminal</strong> (Ctrl + `) and type:</p>
+        <div class="cmd-block">
+            git --version
+        </div>
+        <p>You should see something like <code>git version 2.43.0</code>. If you get an error, restart your computer after installing Git.</p>
+
+        <h3>Configure Git with your identity (one-time)</h3>
+        <div class="cmd-block">
+            <span class="comment"># Replace with YOUR name and email (use the same email as your GitHub account)</span><br>
+            git config --global user.name "<span class="highlight">Your Name</span>"<br>
+            git config --global user.email "<span class="highlight">your-email@example.com</span>"
+        </div>
+    </div>
+
+    <!-- FIRST PUSH -->
+    <div class="section" id="first-push">
+        <h2>2. First-Time Push to GitHub <span class="badge onetime">ONE-TIME</span></h2>
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>Create a new repository on GitHub</h4>
+                <ol>
+                    <li>Go to <a href="https://github.com/new" target="_blank">github.com/new</a></li>
+                    <li>Repository name: <code>westack-website</code> (or any name you prefer)</li>
+                    <li>Description: <code>West ACK Engineering Ltd. - Official Website</code></li>
+                    <li>Select <strong>Public</strong> (required for free GitHub Pages hosting)</li>
+                    <li>Do NOT check "Add a README file" or any other options</li>
+                    <li>Click <strong>"Create repository"</strong></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>Open Terminal in VS Code</h4>
+                <p>Press <code>Ctrl + `</code> to open the terminal. Make sure you're in the website folder:</p>
+                <div class="cmd-block">
+                    <span class="comment"># Navigate to your website folder</span><br>
+                    cd "<span class="highlight">C:\Users\Samuel\OneDrive\Desktop\PROJECT WESTACK\westack-website</span>"
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Initialize Git and make your first commit</h4>
+                <div class="cmd-block">
+                    <span class="comment"># Initialize a new Git repository</span><br>
+                    git init<br><br>
+                    <span class="comment"># Add ALL files to staging</span><br>
+                    git add .<br><br>
+                    <span class="comment"># Create your first commit</span><br>
+                    git commit -m "Initial commit: West ACK Engineering website"
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <h4>Connect to GitHub and push</h4>
+                <div class="cmd-block">
+                    <span class="comment"># Set the main branch name</span><br>
+                    git branch -M main<br><br>
+                    <span class="comment"># Connect to your GitHub repo (replace YOUR-USERNAME with your GitHub username)</span><br>
+                    git remote add origin https://github.com/<span class="highlight">YOUR-USERNAME</span>/westack-website.git<br><br>
+                    <span class="comment"># Push everything to GitHub</span><br>
+                    git push -u origin main
+                </div>
+                <div class="tip">
+                    <strong>First time?</strong> A browser window will pop up asking you to sign in to GitHub. Sign in and authorize Git. This only happens once.
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+                <h4>Verify on GitHub</h4>
+                <p>Go to <code>https://github.com/YOUR-USERNAME/westack-website</code> — you should see all your website files there!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GITHUB PAGES -->
+    <div class="section" id="github-pages">
+        <h2>3. Deploy with GitHub Pages <span class="badge onetime">ONE-TIME</span></h2>
+        <p>GitHub Pages gives you <strong>free hosting</strong> with a URL like <code>your-username.github.io/westack-website</code></p>
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>Go to repository Settings</h4>
+                <p>On your GitHub repo page, click <strong>Settings</strong> (top menu bar, far right)</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>Navigate to Pages</h4>
+                <p>In the left sidebar, click <strong>Pages</strong> (under "Code and automation")</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Configure the source</h4>
+                <ul>
+                    <li><strong>Source:</strong> Select "Deploy from a branch"</li>
+                    <li><strong>Branch:</strong> Select <code>main</code></li>
+                    <li><strong>Folder:</strong> Select <code>/ (root)</code></li>
+                    <li>Click <strong>Save</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <h4>Wait 2-5 minutes</h4>
+                <p>GitHub will build and deploy your site. Refresh the Settings > Pages page — you'll see a green banner with your live URL:</p>
+                <div class="cmd-block">
+                    https://<span class="highlight">YOUR-USERNAME</span>.github.io/westack-website/
+                </div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <strong>Your website is now live!</strong> Share the URL with anyone. Every time you push changes (see section 4), the site updates automatically within a few minutes.
+        </div>
+    </div>
+
+    <!-- PUSHING UPDATES -->
+    <div class="section" id="updates">
+        <h2>4. Pushing Future Updates <span class="badge repeat">EVERY TIME</span></h2>
+        <p>After making any changes to your website files, use these 3 commands to push them live:</p>
+
+        <div class="cmd-block">
+            <span class="comment"># 1. Navigate to the project folder (if not already there)</span><br>
+            cd "<span class="highlight">C:\Users\Samuel\OneDrive\Desktop\PROJECT WESTACK\westack-website</span>"<br><br>
+            <span class="comment"># 2. Stage all changed files</span><br>
+            git add .<br><br>
+            <span class="comment"># 3. Commit with a description of what you changed</span><br>
+            git commit -m "<span class="highlight">Updated service images and contact info</span>"<br><br>
+            <span class="comment"># 4. Push to GitHub (site auto-updates in ~2 mins)</span><br>
+            git push
+        </div>
+
+        <div class="tip">
+            <strong>Tip:</strong> Write meaningful commit messages so you can track what changed:<br>
+            <code>git commit -m "Added new portfolio images"</code><br>
+            <code>git commit -m "Updated phone number in footer"</code><br>
+            <code>git commit -m "Replaced carousel images with real project photos"</code>
+        </div>
+
+        <h3>Quick Reference — The 3 Commands You'll Always Use</h3>
+        <div class="cmd-block">
+            git add .<br>
+            git commit -m "your message here"<br>
+            git push
+        </div>
+    </div>
+
+    <!-- CUSTOM DOMAIN -->
+    <div class="section" id="custom-domain">
+        <h2>5. Custom Domain (Optional)</h2>
+        <p>To use your own domain (e.g., <code>www.westackengineering.com</code>) instead of the github.io URL:</p>
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>Buy a domain</h4>
+                <p>Purchase from <a href="https://www.namecheap.com" target="_blank">Namecheap</a>, <a href="https://domains.google" target="_blank">Google Domains</a>, or any registrar.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>Create a CNAME file</h4>
+                <p>In your <code>westack-website</code> folder, create a file named exactly <code>CNAME</code> (no extension) containing only your domain:</p>
+                <div class="cmd-block">www.westackengineering.com</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Configure DNS at your domain registrar</h4>
+                <p>Add these DNS records:</p>
+                <div class="cmd-block">
+                    Type: CNAME<br>
+                    Host: www<br>
+                    Value: <span class="highlight">YOUR-USERNAME</span>.github.io<br><br>
+                    <span class="comment"># For apex domain (without www), add these A records:</span><br>
+                    Type: A → 185.199.108.153<br>
+                    Type: A → 185.199.109.153<br>
+                    Type: A → 185.199.110.153<br>
+                    Type: A → 185.199.111.153
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <h4>Enable in GitHub Settings</h4>
+                <p>Go to Settings > Pages > Custom domain, enter your domain, check "Enforce HTTPS", and Save.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+                <h4>Push and wait</h4>
+                <div class="cmd-block">
+                    git add .<br>
+                    git commit -m "Added custom domain"<br>
+                    git push
+                </div>
+                <p>DNS changes can take up to 24-48 hours to propagate worldwide.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div class="section" id="troubleshooting">
+        <h2>6. Troubleshooting</h2>
+
+        <h3>Common Issues</h3>
+        <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f8f9fa;">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Problem</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Solution</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;"><code>'git' is not recognized</code></td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Restart VS Code/PC after installing Git. If still failing, reinstall Git and check "Add to PATH" during setup.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Push rejected / authentication error</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Make sure you signed into GitHub when the browser popup appeared. Try: <code>git push</code> again.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">GitHub Pages shows 404</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Make sure <code>index.html</code> is at the ROOT of your repo (not inside a subfolder). Wait 5 minutes and try again.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">CSS / images not loading on live site</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Check that file paths in your HTML are relative (e.g., <code>css/style.css</code> not <code>/css/style.css</code> or <code>C:\...</code>). Clear browser cache (Ctrl+Shift+R).</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Changes not showing after push</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">GitHub Pages can take 2-10 minutes to update. Hard refresh your browser: <code>Ctrl+Shift+R</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;"><code>fatal: not a git repository</code></td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">You're in the wrong folder. Run <code>cd</code> to navigate to <code>westack-website</code> first.</td>
+            </tr>
+        </table>
+
+        <h3>Useful Git commands</h3>
+        <div class="cmd-block">
+            <span class="comment"># Check status of changed files</span><br>
+            git status<br><br>
+            <span class="comment"># See history of commits</span><br>
+            git log --oneline<br><br>
+            <span class="comment"># Undo all uncommitted changes (careful!)</span><br>
+            git checkout .<br><br>
+            <span class="comment"># See what changed in files</span><br>
+            git diff
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>West ACK Engineering Ltd. | GitHub Deployment Guide</p>
+    <p style="margin-top: 5px; font-size: 0.85rem;">Keep this file for reference — do NOT upload it to the live website.</p>
+</div>
+
+</body>
+</html>

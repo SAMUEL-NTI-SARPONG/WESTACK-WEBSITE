@@ -1039,6 +1039,148 @@ a:focus {
   color: #ffffff;
 }
 
+
+/*******************************/
+/********* Clients CSS *********/
+/*******************************/
+.clients {
+    position: relative;
+    width: 100%;
+    padding: 80px 0 60px 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.clients .section-header {
+    margin-bottom: 50px;
+}
+
+.clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+}
+
+.client-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    margin: 15px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 2px solid #f0f0f0;
+    box-shadow: 0 5px 20px rgba(6, 51, 94, 0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+}
+
+.client-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6700 0%, #06335e 100%);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.client-item:hover {
+    transform: translateY(-8px);
+    border-color: #ff6700;
+    box-shadow: 0 15px 40px rgba(255, 103, 0, 0.15);
+}
+
+.client-item:hover::before {
+    transform: scaleX(1);
+}
+
+.client-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #06335e 0%, #0a4a8a 100%);
+    border-radius: 50%;
+    margin-bottom: 18px;
+    transition: all 0.4s ease;
+}
+
+.client-icon i {
+    font-size: 28px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.client-item:hover .client-icon {
+    background: linear-gradient(135deg, #ff6700 0%, #ff8533 100%);
+    transform: scale(1.1);
+}
+
+.client-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #06335e;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.client-item:hover .client-name {
+    color: #ff6700;
+}
+
+.client-sector {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8a9bb5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.client-item:hover .client-sector {
+    color: #06335e;
+}
+
+@media (max-width: 767.98px) {
+    .client-item {
+        padding: 25px 15px;
+        margin: 8px;
+        min-height: 150px;
+    }
+    
+    .client-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .client-icon i {
+        font-size: 22px;
+    }
+    
+    .client-name {
+        font-size: 12px;
+    }
+
+    .client-sector {
+        font-size: 10px;
+    }
+}
+
+
 /*******************************/
 /********** Video CSS **********/
 /*******************************/

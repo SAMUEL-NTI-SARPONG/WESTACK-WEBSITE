@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Natural Gas Engineering | West ACK Engineering Ltd.</title>
+    <title>Natural Gas Engineering and Construction | West ACK Engineering Ltd.</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Natural gas engineering services" name="keywords" />
     <meta content="Comprehensive natural gas engineering services" name="description" />
 
-    <link href="img/favicon.html" rel="icon" />
+    <link href="img/logo.png" rel="icon" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
@@ -85,7 +85,7 @@
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="services.html" class="nav-item nav-link active">Service</a>
                 <a href="projects.html" class="nav-item nav-link">Project</a>
-                <a href="certificates.html" class="nav-item nav-link">Certificates</a>                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <!-- <a href="certificates.html" class="nav-item nav-link">Certificates</a> -->                <a href="contact.html" class="nav-item nav-link">Contact</a>
               </div>
             </div>
           </nav>
@@ -96,7 +96,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2>Natural Gas Engineering Services</h2>
+              <h2>Natural Gas Engineering and Construction Services</h2>
             </div>
           </div>
         </div>
@@ -107,8 +107,12 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="single-content wow fadeInUp">
-                                <img src="img/service-4.jpg" />
-                                <h2>Natural Gas Engineering</h2>
+                                <div class="service-carousel">
+                                  <div><img src="img/service-4.jpg" alt="Natural Gas Engineering and Construction" /></div>
+                                  <div><img src="img/service-4-2.jpg" alt="Natural Gas Engineering and Construction" /></div>
+                                  <div><img src="img/service-4-3.jpg" alt="Natural Gas Engineering and Construction" /></div>
+                                </div>
+                                <h2>Natural Gas Engineering and Construction</h2>
                                 <p>
                                 West ACK Engineering specializes in natural gas engineering services, providing comprehensive solutions for gas pipeline systems and facilities. Our experienced team ensures safe and efficient natural gas operations from commissioning to ongoing maintenance.</p>
 								
@@ -120,6 +124,7 @@
 										<li><b>Protection Systems:</b> Installation of cathodic protection systems and calibration of gas detectors</li>
 										<li><b>System Integration:</b> Integration of natural gas systems with existing infrastructure</li>
 										<li><b>Safety Compliance:</b> Ensuring all installations meet industry safety standards and regulations</li>
+										<li><b>Oil and Gas Operations:</b> Comprehensive oil and gas operational support including production optimization, process management, and field operations</li>
 									</ul>
                                 </p>
                             </div>
@@ -152,7 +157,7 @@
                                                 <img src="img/service-3.jpg" />
                                             </div>
                                             <div class="post-text">
-                                                <a href="electrical-instrumentation.html">Electrical & Instrumentation</a>
+                                                <a href="electrical-instrumentation.html">Power Systems, Electrical & Instrumentation</a>
                                             </div>
                                         </div>
                                         <div class="post-item">
@@ -160,7 +165,7 @@
                                                 <img src="img/service-4.jpg" />
                                             </div>
                                             <div class="post-text">
-                                                <a href="natural-gas.html">Natural Gas Engineering</a>
+                                                <a href="natural-gas.html">Natural Gas Engineering and Construction</a>
                                             </div>
                                         </div>
                                         <div class="post-item">
@@ -213,7 +218,7 @@
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="services.html">Our Services</a>
-                <a href="projects.html">Our Projects</a>                <a href="certificates.html">Our Certificates</a>
+                <a href="projects.html">Our Projects</a>                <!-- <a href="certificates.html">Our Certificates</a> -->
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -262,5 +267,21 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.service-carousel').slick({
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          fade: true,
+          cssEase: 'ease-in-out',
+          prevArrow: '<button class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+          nextArrow: '<button class="slick-next"><i class="fa fa-chevron-right"></i></button>'
+        });
+      });
+    </script>
   </body>
 </html>

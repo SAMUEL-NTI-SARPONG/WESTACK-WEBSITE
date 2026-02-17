@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Electrical & Instrumentation | West ACK Engineering Ltd.</title>
+    <title>Power Systems, Electrical & Instrumentation | West ACK Engineering Ltd.</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Electrical and instrumentation engineering services" name="keywords" />
     <meta content="Comprehensive electrical and instrumentation engineering services" name="description" />
 
-    <link href="img/favicon.html" rel="icon" />
+    <link href="img/logo.png" rel="icon" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
@@ -85,7 +85,7 @@
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="services.html" class="nav-item nav-link active">Service</a>
                 <a href="projects.html" class="nav-item nav-link">Project</a>
-                <a href="certificates.html" class="nav-item nav-link">Certificates</a>                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <!-- <a href="certificates.html" class="nav-item nav-link">Certificates</a> -->                <a href="contact.html" class="nav-item nav-link">Contact</a>
               </div>
             </div>
           </nav>
@@ -96,7 +96,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2>Electrical & Instrumentation Services</h2>
+              <h2>Power Systems, Electrical & Instrumentation Services</h2>
             </div>
           </div>
         </div>
@@ -107,10 +107,17 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="single-content wow fadeInUp">
-                                <img src="img/service-3.jpg" />
-                                <h2>Electrical & Instrumentation Engineering</h2>
+                                <div class="service-carousel">
+                                  <div><img src="img/service-3.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                  <div><img src="img/service-3-2.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                  <div><img src="img/service-3-3.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                  <div><img src="img/service-3-4.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                  <div><img src="img/service-3-5.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                  <div><img src="img/service-3-6.jpg" alt="Power Systems, Electrical & Instrumentation" /></div>
+                                </div>
+                                <h2>Power Systems, Electrical and Instrumentation Engineering</h2>
                                 <p>
-                                West ACK Engineering provides comprehensive electrical and instrumentation engineering services for industrial, commercial, and infrastructure projects. Our qualified engineers and technicians deliver safe, reliable, and code-compliant solutions across power systems and automation.</p>
+                                West ACK Engineering provides comprehensive power systems, electrical and instrumentation engineering services for industrial, commercial and infrastructure projects. Our qualified engineers and technicians deliver safe, reliable and code-compliant solutions across power systems and automation.</p>
 								
 								<p>
                                     <ul>
@@ -153,7 +160,7 @@
                                                 <img src="img/service-3.jpg" />
                                             </div>
                                             <div class="post-text">
-                                                <a href="electrical-instrumentation.html">Electrical & Instrumentation</a>
+                                                <a href="electrical-instrumentation.html">Power Systems, Electrical & Instrumentation</a>
                                             </div>
                                         </div>
                                         <div class="post-item">
@@ -161,7 +168,7 @@
                                                 <img src="img/service-4.jpg" />
                                             </div>
                                             <div class="post-text">
-                                                <a href="natural-gas.html">Natural Gas Engineering</a>
+                                                <a href="natural-gas.html">Natural Gas Engineering and Construction</a>
                                             </div>
                                         </div>
                                         <div class="post-item">
@@ -214,7 +221,7 @@
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="services.html">Our Services</a>
-                <a href="projects.html">Our Projects</a>                <a href="certificates.html">Our Certificates</a>
+                <a href="projects.html">Our Projects</a>                <!-- <a href="certificates.html">Our Certificates</a> -->
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -263,5 +270,21 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.service-carousel').slick({
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          fade: true,
+          cssEase: 'ease-in-out',
+          prevArrow: '<button class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+          nextArrow: '<button class="slick-next"><i class="fa fa-chevron-right"></i></button>'
+        });
+      });
+    </script>
   </body>
 </html>

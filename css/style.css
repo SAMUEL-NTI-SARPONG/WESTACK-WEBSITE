@@ -1061,13 +1061,17 @@ a:focus {
   gap: 0;
 }
 
+.clients-grid > div {
+  display: flex;
+}
+
 .client-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 35px 20px;
-  margin: 15px;
+  margin: 10px;
   background: #ffffff;
   border-radius: 16px;
   border: 2px solid #f0f0f0;
@@ -1075,7 +1079,9 @@ a:focus {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
-  min-height: 180px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
 }
 
 .client-item::before {

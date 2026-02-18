@@ -630,6 +630,7 @@ a:focus {
 /*******************************/
 .feature {
   position: relative;
+  margin-top: 45px;
   margin-bottom: 60px;
 }
 
@@ -2826,7 +2827,9 @@ a:focus {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   height: 100%;
 }
 
